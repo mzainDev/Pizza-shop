@@ -9,7 +9,7 @@ interface Products {
   price: number;
   img: string;
   rating: number;
-  handleToast:any
+  handleToast: any;
 }
 
 const FoodCard: React.FC<Products> = ({
@@ -19,7 +19,7 @@ const FoodCard: React.FC<Products> = ({
   price,
   img,
   rating,
-  handleToast
+  handleToast,
 }) => {
   const dispatch = useDispatch();
   return (
@@ -40,9 +40,7 @@ const FoodCard: React.FC<Products> = ({
         </span>
         <button
           onClick={() => {
-            dispatch(
-              addToCart({ id, name, price, rating, img, qty: 1 })
-            );
+            dispatch(addToCart({ id, name, price, img, qty: 1 }));
             handleToast(name);
           }}
           className="p-1 text-white bg-green-500 hover:bg-green-600 rounded-lg text-sm"
