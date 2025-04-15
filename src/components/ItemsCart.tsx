@@ -19,7 +19,7 @@ const ItemsCart: React.FC<Product> = ({ id, name, price, qty, img }) => {
       <div className="flex gap-2 shadow-md p-2 rounded-lg mb-3">
         <MdDelete
           onClick={() => {
-            dispatch(removeFromCart({ id, img, name, price, qty }));
+            dispatch(removeFromCart({ id }));
             toast(`${name} Removed!`, {
               icon: "👋",
             });
